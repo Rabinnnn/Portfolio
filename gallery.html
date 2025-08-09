@@ -97,82 +97,151 @@
     <!-- gallery_area start  -->
     <div class="gallery_area">
         <div class="container">
+            <!-- Filter Navigation -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-xl-8 col-lg-10">
+                    <div class="gallery-filter-menu text-center">
+                        <button class="active" data-filter="*">All</button>
+                        <button data-filter=".software">Software</button>
+                        <button data-filter=".graphics">Graphics</button>
+                        <button data-filter=".uiux">UI/UX</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
             <div class="row justify-content-center">
-                <div class="col-xl-10 col-lg-10">
-                    <div class="row" data-aos="zoom-in" data-aos-delay="100" style="transition: 2.0s;">
-                        <div class="col-xl-6 col-lg-6 col-md-6">
-                            <div class="single_gallery" >
-                                <div class="thumb">
-                                    <img src="img/gallery/1.png" alt="">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="row gallery-grid" data-aos="zoom-in" data-aos-delay="100" style="transition: 2.0s;">
+                        <!-- Software Projects -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4 gallery-grid-item software">
+                            <div class="gallery-card">
+                                <div class="gallery-thumb">
+                                    <img src="img/gallery/joy2.png" alt="E-commerce Website">
                                 </div>
-                                <div class="gallery_heading">
-                                    <span>Graphics</span>
-                                    <a href="works_details.html"><h4>Adobe Photoshop</h4></a>
-                                </div>
-                            </div>
-                            <div class="single_gallery">
-                                <div class="thumb">
-                                    <img src="img/gallery/logo1.png" alt="">
-                                </div>
-                                <div class="gallery_heading">
-                                    <span>Logo Design</span>
-                                    <a href="works_details.html"><h4>Adobe Illustrator</h4></a>
-                                </div>
-                            </div>
-                            <div class="single_gallery">
-                                <div class="thumb">
-                                    <img src="img/gallery/banner1.png" alt="">
-                                </div>
-                                <div class="gallery_heading">
-                                    <span>Banner</span>
-                                    <a href="#"><h4>Adobe Illustrator</h4></a>
-                                </div>
-                            </div>
-                            <div class="single_gallery">
-                                <div class="thumb">
-                                    <img src="img/gallery/flyer1.png" alt="">
-                                </div>
-                                <div class="gallery_heading">
-                                    <span>Flyer</span>
-                                    <a href="#"><h4>Adobe Illustrator</h4></a>
+                                <div class="gallery-card-content">
+                                    <span class="gallery-category">E-commerce Platform</span>
+                                    <h4 class="gallery-title">Full-stack web application with payment integration</h4>
+                                    <p class="gallery-description">Built with React, Node.js, and MongoDB for seamless online shopping experience.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6">
-                            <div class="single_gallery">
-                                <div class="thumb">
-                                    <img src="img/gallery/joy2.png" alt="">
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4 gallery-grid-item software">
+                            <div class="gallery-card">
+                                <div class="gallery-thumb">
+                                    <img src="img/gallery/gates.JPG" alt="Portfolio Website">
                                 </div>
-                                <div class="gallery_heading">
-                                    <span>Website</span>
-                                    <a href="works_details.html"><h4>Frontend Dev</h4></a>
-                                </div>
-                            </div>
-                            <div class="single_gallery">
-                                <div class="thumb">
-                                    <img src="img/gallery/4.png" alt="">
-                                </div>
-                                <div class="gallery_heading">
-                                    <span>Mobile App Interface</span>
-                                    <a href="works_details.html"><h4>Figma</h4></a>
+                                <div class="gallery-card-content">
+                                    <span class="gallery-category">Portfolio Website</span>
+                                    <h4 class="gallery-title">Responsive personal portfolio with modern design</h4>
+                                    <p class="gallery-description">Custom-built using HTML5, CSS3, and JavaScript with smooth animations.</p>
                                 </div>
                             </div>
-                            <div class="single_gallery">
-                                <div class="thumb">
-                                    <img src="img/gallery/card1.png" alt="">
+                        </div>
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4 gallery-grid-item software">
+                            <div class="gallery-card">
+                                <div class="gallery-thumb">
+                                    <img src="img/gallery/1.png" alt="Task Management App">
                                 </div>
-                                <div class="gallery_heading">
-                                    <span>Business Card</span>
-                                    <a href="#"><h4>Adobe Photoshop</h4></a>
+                                <div class="gallery-card-content">
+                                    <span class="gallery-category">Task Management System</span>
+                                    <h4 class="gallery-title">Collaborative project management tool</h4>
+                                    <p class="gallery-description">Web application for team collaboration with real-time updates and notifications.</p>
                                 </div>
                             </div>
-                            <div class="single_gallery">
-                                <div class="thumb">
-                                    <img src="img/gallery/gates.JPG" alt="">
+                        </div>
+
+                        <!-- Graphics Projects -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4 gallery-grid-item graphics">
+                            <div class="gallery-card">
+                                <div class="gallery-thumb">
+                                    <img src="img/gallery/logo1.png" alt="Brand Logo Design">
                                 </div>
-                                <div class="gallery_heading">
-                                    <span>Website</span>
-                                    <a href="#"><h4>Frontend</h4></a>
+                                <div class="gallery-card-content">
+                                    <span class="gallery-category">Brand Identity</span>
+                                    <h4 class="gallery-title">Modern logo design for tech startup</h4>
+                                    <p class="gallery-description">Creative logo design with complete brand guidelines and color palette.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4 gallery-grid-item graphics">
+                            <div class="gallery-card">
+                                <div class="gallery-thumb">
+                                    <img src="img/gallery/banner1.png" alt="Marketing Banner">
+                                </div>
+                                <div class="gallery-card-content">
+                                    <span class="gallery-category">Marketing Campaign</span>
+                                    <h4 class="gallery-title">Digital advertising banners for social media</h4>
+                                    <p class="gallery-description">Eye-catching banner designs optimized for various social media platforms.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4 gallery-grid-item graphics">
+                            <div class="gallery-card">
+                                <div class="gallery-thumb">
+                                    <img src="img/gallery/flyer1.png" alt="Event Flyer">
+                                </div>
+                                <div class="gallery-card-content">
+                                    <span class="gallery-category">Event Promotion</span>
+                                    <h4 class="gallery-title">Professional flyer design for corporate event</h4>
+                                    <p class="gallery-description">Print-ready flyer design with compelling visuals and clear information hierarchy.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4 gallery-grid-item graphics">
+                            <div class="gallery-card">
+                                <div class="gallery-thumb">
+                                    <img src="img/gallery/card1.png" alt="Business Card">
+                                </div>
+                                <div class="gallery-card-content">
+                                    <span class="gallery-category">Business Stationery</span>
+                                    <h4 class="gallery-title">Professional business card design</h4>
+                                    <p class="gallery-description">Elegant business card design with premium finish and modern typography.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UI/UX Projects -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4 gallery-grid-item uiux">
+                            <div class="gallery-card">
+                                <div class="gallery-thumb">
+                                    <img src="img/gallery/4.png" alt="Mobile App UI">
+                                </div>
+                                <div class="gallery-card-content">
+                                    <span class="gallery-category">Mobile App Interface</span>
+                                    <h4 class="gallery-title">Intuitive fitness tracking app design</h4>
+                                    <p class="gallery-description">User-centered design with seamless navigation and engaging visual elements.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4 gallery-grid-item uiux">
+                            <div class="gallery-card">
+                                <div class="gallery-thumb">
+                                    <img src="img/gallery/1.png" alt="Dashboard Design">
+                                </div>
+                                <div class="gallery-card-content">
+                                    <span class="gallery-category">Admin Dashboard</span>
+                                    <h4 class="gallery-title">Clean and functional analytics dashboard</h4>
+                                    <p class="gallery-description">Data visualization interface with intuitive controls and responsive design.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4 gallery-grid-item uiux">
+                            <div class="gallery-card">
+                                <div class="gallery-thumb">
+                                    <img src="img/gallery/joy2.png" alt="Website Redesign">
+                                </div>
+                                <div class="gallery-card-content">
+                                    <span class="gallery-category">Website Redesign</span>
+                                    <h4 class="gallery-title">Modern e-commerce user experience</h4>
+                                    <p class="gallery-description">Complete UX overhaul focusing on conversion optimization and user satisfaction.</p>
                                 </div>
                             </div>
                         </div>

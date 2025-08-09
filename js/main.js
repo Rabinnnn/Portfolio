@@ -269,6 +269,30 @@ center: false,
     $(this).addClass('active');
     event.preventDefault();
 	});
+
+  // Gallery page specific filter
+  // init Isotope for gallery page
+  var $galleryGrid = $('.gallery-grid').isotope({
+    itemSelector: '.gallery-grid-item',
+    percentPosition: true,
+    masonry: {
+      // use outer width of grid-sizer for columnWidth
+      columnWidth: 1
+    }
+  });
+
+  // filter items on button click for gallery page
+  $('.gallery-filter-menu').on('click', 'button', function () {
+    var filterValue = $(this).attr('data-filter');
+    $galleryGrid.isotope({ filter: filterValue });
+  });
+
+  //for menu active class for gallery page
+  $('.gallery-filter-menu button').on('click', function (event) {
+    $(this).siblings('.active').removeClass('active');
+    $(this).addClass('active');
+    event.preventDefault();
+	});
   
   // wow js
   new WOW().init();
