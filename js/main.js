@@ -15,6 +15,38 @@ $(window).on('scroll', function () {
 
 
 
+ const typingTarget = document.getElementById("typing-target");
+
+  // Get the original HTML content of the element (includes inner tags like <strong>)
+  const originalHTML = typingTarget.innerHTML;
+
+  // Temporarily store as a plain text version to split character by character
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = originalHTML;
+  const plainText = tempDiv.textContent || tempDiv.innerText || "";
+
+  let index = 0;
+  let currentText = "";
+
+  function type() {
+    if (index < plainText.length) {
+      currentText += plainText.charAt(index);
+      typingTarget.innerText = currentText;
+      index++;
+      setTimeout(type, 150);
+    } else {
+      // Restore HTML with original formatting
+      typingTarget.innerHTML = originalHTML;
+      typingTarget.classList.remove("typing");
+      typingTarget.classList.add("no-cursor");
+    }
+  }
+
+  // Start typing
+  typingTarget.innerText = ""; // Clear text initially
+  type();
+
+
 
 $(document).ready(function(){
 
@@ -468,4 +500,38 @@ mailChimp();
 
 
 
-})(jQuery);	
+// Typing Effect Function
+function typeWriter() {
+    const fullText = "I'm here to tech care of your needs";
+    const typingElement = document.getElementById("typing-text");
+    const cursor = document.getElementById("cursor");
+    let i = 0;
+
+    // Clear any existing text
+    typingElement.innerHTML = "";
+
+    function type() {
+        if (i < fullText.length) {
+            let currentText = fullText.substring(0, i + 1);
+
+            // Apply styling to the word "tech" if it's been typed
+            if (currentText.includes("tech")) {
+                currentText = currentText.replace("tech", '<strong class="custom-underline">tech</strong>');
+            }
+
+            typingElement.innerHTML = currentText;
+            i++;
+            setTimeout(type, 120); // Typing speed - adjust as needed
+        }
+    }
+
+    // Start typing after a small delay
+    setTimeout(type, 1500); // Start typing after 1.5 seconds (after AOS animation)
+}
+
+// Initialize typing effect when page loads
+$(document).ready(function() {
+    typeWriter();
+});
+
+})(jQuery);

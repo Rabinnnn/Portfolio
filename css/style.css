@@ -6443,3 +6443,23 @@ h6 {
 .ch-item:hover .ch-info-back {
 	background: rgba(230,132,107,0.6);
 }
+
+.custom-underline {
+    border-bottom: 2px solid white;
+  }
+
+  .typing::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+    display: inline-block;
+  }
+
+  .no-cursor::after {
+    content: "";
+    animation: none;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
