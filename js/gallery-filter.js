@@ -46,4 +46,40 @@ $(document).ready(function() {
     });
     
     console.log('Gallery filter setup complete');
+
+    // Read More functionality
+    $('.gallery-description').each(function() {
+        var $this = $(this);
+        var text = $this.text();
+        var maxLength = 80; // Maximum characters to show initially
+
+        if (text.length > maxLength) {
+            var truncatedText = text.substring(0, maxLength) + '...';
+            var fullText = text;
+
+            // Create the truncated version
+            $this.html(truncatedText + ' <a href="#" class="read-more-btn">Read more</a>');
+            $this.addClass('truncated');
+
+            // Store the full text as data attribute
+            $this.data('full-text', fullText);
+            $this.data('truncated-text', truncatedText);
+        }
+    });
+
+    // Handle Read More / Read Less clicks
+    $(document).on('click', '.read-more-btn', function(e) {
+        e.preventDefault();
+        var $description = $(this).closest('.gallery-description');
+        var fullText = $description.data('full-text');
+        var truncatedText = $description.data('truncated-text');
+
+        if ($(this).text() === 'Read more') {
+            $description.html(fullText + ' <a href="#" class="read-more-btn">Read less</a>');
+            $description.removeClass('truncated');
+        } else {
+            $description.html(truncatedText + ' <a href="#" class="read-more-btn">Read more</a>');
+            $description.addClass('truncated');
+        }
+    });
 });
