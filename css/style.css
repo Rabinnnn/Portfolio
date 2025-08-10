@@ -6492,10 +6492,10 @@ h6 {
 
 .gallery-filter-menu button:hover,
 .gallery-filter-menu button.active {
-  background: #568a7d;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(86, 138, 125, 0.3);
+  background: #568a7d !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(86, 138, 125, 0.3) !important;
 }
 
 /* Gallery Grid Styles */
@@ -6509,7 +6509,7 @@ h6 {
 }
 
 .gallery-card {
-  background: white;
+  background: var(--card-bg, white);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -6528,13 +6528,17 @@ h6 {
   position: relative;
   overflow: hidden;
   height: 250px;
+  padding: 15px;
+  background: inherit;
 }
 
 .gallery-card .gallery-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-card:hover .gallery-thumb img {

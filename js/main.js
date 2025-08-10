@@ -270,29 +270,48 @@ center: false,
     event.preventDefault();
 	});
 
-  // Gallery page specific filter
-  // init Isotope for gallery page
-  var $galleryGrid = $('.gallery-grid').isotope({
-    itemSelector: '.gallery-grid-item',
-    percentPosition: true,
-    masonry: {
-      // use outer width of grid-sizer for columnWidth
-      columnWidth: 1
+  // Gallery page filter - Fixed active class handling
+  console.log('Script loaded - checking for gallery elements...');
+  console.log('Gallery filter menu found:', $('.gallery-filter-menu').length);
+
+  $(document).ready(function() {
+    console.log('Document ready - setting up gallery filters...');
+
+    if ($('.gallery-filter-menu').length > 0) {
+      console.log('Gallery filter menu exists, attaching click handlers...');
+
+      $('.gallery-filter-menu button').click(function(e) {
+        console.log('BUTTON CLICKED!');
+        e.preventDefault();
+        e.stopPropagation();
+
+        // Force remove active class from ALL buttons
+        $('.gallery-filter-menu button').each(function() {
+          $(this).removeClass('active');
+        });
+
+        // Force add active class to clicked button
+        $(this).addClass('active');
+
+        // Double check - log for debugging
+        console.log('Clicked button text:', $(this).text());
+        console.log('Button has active class:', $(this).hasClass('active'));
+        console.log('All buttons with active class:', $('.gallery-filter-menu button.active').map(function() { return $(this).text(); }).get());
+        console.log('Active button count:', $('.gallery-filter-menu button.active').length);
+
+        var filterValue = $(this).attr('data-filter');
+
+        if (filterValue === '*') {
+          $('.gallery-grid-item').fadeIn(300);
+        } else {
+          $('.gallery-grid-item').fadeOut(300);
+          $('.gallery-grid-item' + filterValue).fadeIn(300);
+        }
+
+        return false;
+      });
     }
   });
-
-  // filter items on button click for gallery page
-  $('.gallery-filter-menu').on('click', 'button', function () {
-    var filterValue = $(this).attr('data-filter');
-    $galleryGrid.isotope({ filter: filterValue });
-  });
-
-  //for menu active class for gallery page
-  $('.gallery-filter-menu button').on('click', function (event) {
-    $(this).siblings('.active').removeClass('active');
-    $(this).addClass('active');
-    event.preventDefault();
-	});
   
   // wow js
   new WOW().init();
