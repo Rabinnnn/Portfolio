@@ -6635,3 +6635,81 @@ h6 {
     margin: 0 0 10px 0;
   }
 }
+
+/* Mobile Font Size Optimizations for Index Page */
+@media (max-width: 768px) {
+  /* About section heading */
+  .download_text h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* About section description paragraphs */
+  .download_left p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* Hero section main heading */
+  .heroText h1 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Hero section typing text */
+  .heroText p {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Section titles */
+  .section_title h3 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Gallery headings */
+  .gallery_heading h4 {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+  }
+
+  .gallery_heading span {
+    font-size: 12px !important;
+  }
+
+  /* Footer text */
+  .lets_talk h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  .lets_talk p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small screens - even smaller fonts */
+  .download_text h3 {
+    font-size: 18px !important;
+  }
+
+  .download_left p {
+    font-size: 13px !important;
+  }
+
+  .heroText h1 {
+    font-size: 24px !important;
+  }
+
+  .heroText p {
+    font-size: 14px !important;
+  }
+
+  .section_title h3 {
+    font-size: 20px !important;
+  }
+}
