@@ -13,6 +13,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- Preload critical resources -->
+    <link rel="preload" href="img/woyez.png" as="image">
+    <link rel="preload" href="img/waves.mp4" as="video" type="video/mp4">
+
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon32.png">
 
@@ -133,8 +137,10 @@
 
     </div>
     <div class="videoWrapper">
-        <video autoplay="" loop="" muted="" class="custom-video" poster="img/woyez.png" preload="none">
+        <video autoplay="" loop="" muted="" class="custom-video" poster="img/woyez.png" preload="metadata" playsinline>
             <source src="img/waves.mp4" type="video/mp4">
+            <!-- Fallback for slower connections -->
+            <div class="video-fallback" style="background-image: url('img/woyez.png'); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
             Your browser does not support the video tag.
         </video>
     </div>
@@ -486,8 +492,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </footer>
     <!--/ footer end  -->
 
-    <!-- Performance Optimization Script - Load first -->
+    <!-- Performance Optimization Scripts - Load first -->
     <script src="js/lazy-load-optimizer.js"></script>
+    <script src="js/video-animation-optimizer.js"></script>
 
     <!-- Critical JS - Load immediately -->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>

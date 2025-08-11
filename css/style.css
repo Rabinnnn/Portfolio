@@ -6713,3 +6713,50 @@ h6 {
     font-size: 20px !important;
   }
 }
+
+/* Video Loading Optimizations */
+.videoWrapper {
+  position: relative;
+  background-image: url('../img/woyez.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.custom-video {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.custom-video.loaded {
+  opacity: 1;
+}
+
+/* Services Section Animation Optimizations */
+.ch-grid {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.ch-grid.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ch-item {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Preload critical background images */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  background-image: url('../img/woyez.png');
+}
