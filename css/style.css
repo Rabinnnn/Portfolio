@@ -6760,3 +6760,67 @@ h6 {
   height: 1px;
   background-image: url('../img/woyez.png');
 }
+
+/* Animated Arrow for Gallery Page */
+.animated-arrow {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.animated-arrow i {
+  font-size: 24px;
+  color: #fff;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.animated-arrow i:hover {
+  color: #568a7d;
+  transform: scale(1.2);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Alternative pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive arrow size */
+@media (max-width: 768px) {
+  .animated-arrow i {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-arrow i {
+    font-size: 18px;
+  }
+
+  .animated-arrow {
+    margin-top: 15px;
+  }
+}
