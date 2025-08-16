@@ -578,3 +578,13 @@ $(document).ready(function() {
 });
 
 })(jQuery);
+
+const video = document.getElementById('heroVideo');
+    const source = document.getElementById('videoSource');
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    source.src = isMobile 
+        ? "https://cdn.jsdelivr.net/gh/rabinnnn/Portfolio@v1.1/img/wav_mobile.webm"
+        : "https://cdn.jsdelivr.net/gh/rabinnnn/Portfolio@v1.1/img/waves_desktop.webm";
+
+    video.load();
