@@ -47,6 +47,23 @@ $(document).ready(function() {
     
     console.log('Gallery filter setup complete');
 
+    // Animated arrow scroll functionality
+    $('.animated-arrow').on('click', function(e) {
+        e.preventDefault();
+
+        // Smooth scroll to gallery section
+        $('html, body').animate({
+            scrollTop: $('.gallery_area').offset().top - 100
+        }, 800, 'easeInOutQuad');
+
+        // Add a little bounce effect on click
+        $(this).find('i').css('animation', 'pulse 0.6s ease-in-out');
+
+        setTimeout(() => {
+            $(this).find('i').css('animation', 'bounce 2s infinite');
+        }, 600);
+    });
+
     // Read More functionality
     $('.gallery-description').each(function() {
         var $this = $(this);
