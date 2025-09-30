@@ -7218,3 +7218,76 @@ h6 {
    overflow: hidden;
    text-overflow: ellipsis
 }
+
+.mk-views-title-container {
+   display: flex;
+   margin-bottom: 30px
+}
+
+.mk-views-title-container .mk-views-title-text {
+   font-size: clamp(24px, 8vw, 40px);
+   line-height: 40px;
+   font-weight: 700;
+   color: var(--themeColor4)
+}
+
+.mk-views-title-container .mk-views-title-line-container {
+   flex: 1 1;
+   display: flex;
+   justify-content: center;
+   align-items: center
+}
+
+.mk-views-title-container .mk-views-title-line-container .mk-views-title-line {
+   height: 1.5px;
+   /* background-color: var(--themeColor2); */
+   background-color: #eee;
+   width: 90%
+}
+
+.text-right {
+   text-align: right
+}
+
+.text-left {
+   text-align: left !important
+}
+
+.mk-assets-hover-filter:hover {
+   filter: grayscale(0);
+   mix-blend-mode: normal;
+   transition: all .3s cubic-bezier(.645, .045, .355, 1)
+}
+
+
+.order-first {
+   order: -1 important!
+}
+
+.order-0 {
+   order: 0 !important
+}
+
+.order-1 {
+   order: 1 !important
+}
+
+.order-2 {
+   order: 2 !important
+}
+
+.order-3 {
+   order: 3 !important
+}
+
+.order-4 {
+   order: 4 !important
+}
+
+.order-5 {
+   order: 5 !important
+}
+
+.order-last {
+   order: 6 !important
+}
